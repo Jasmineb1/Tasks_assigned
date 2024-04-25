@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Separator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Input the number to display Nepali and International Representation!</h1>
+    <form class="form">
+        <input type="text" id="number1" placeholder="Enter the number:" class="inputfield">
+        <button onclick="convertToNepali()" class="button" type="button">Generate Nepali Representation!</button>
+        <button onclick="convertToInter()" class="button" type="button">Generate International Representation!</button>
+    </form>
+    <h2 id="nepalinumber" class="heading">Nepali Number:</h2>
+    <h2 id="internumber" class="heading">International Number:</h2>
+    
+
+    <!-- Javascript -->
+    <script>
+        function convertToNepali(){
+            const input = document.getElementById("number1");
+            const input_number = parseFloat(input.value); // Convert input value to a floating-point number
+            const rounded_number = Math.round(input_number * 100) / 100; // Limit to two decimal places
+            const rounded_str= rounded_number.toString()
+
+            // Separate the integer part for Nepali representation
+            const sample_number = parseInt(rounded_number);
+            let temp = sample_number;
+            let nepali_num = (temp % 1000).toString(); // Initialize with the last 3 digits
+            temp = Math.floor(temp / 1000); // Move to the next group of 3 digits
+            
+            // Loop through the remaining groups of 3 digits
+            while (temp !== 0) {
+                const temp2 = temp % 100;
+                temp = Math.floor(temp / 100);
+                const string_val = temp2.toString();
+                nepali_num = string_val + "," + nepali_num; // Append the current group of 3 digits
+            }
+            decimal_value= rounded_str.slice(-3);
+            final_converted_num= nepali_num+decimal_value
+            
+            const resultDisplay = document.getElementById("nepalinumber");
+            resultDisplay.innerText = "Nepali Number: " + final_converted_num;
+        }
+
+        function convertToInter() {
+            const input = document.getElementById("number1");
+            const input_number = parseFloat(input.value); // Convert input value to a floating-point number
+            const rounded_number = Math.round(input_number * 100) / 100; // Limit to two decimal places
+            const rounded_str= rounded_number.toString()
+
+            // Separate the integer part for Nepali representation
+            const sample_number = parseInt(rounded_number);
+            let temp = sample_number;
+            let inter_num = (temp % 1000).toString(); // Initialize with the last 3 digits
+            temp = Math.floor(temp / 1000); // Move to the next group of 3 digits
+            
+            // Loop through the remaining groups of 3 digits
+            while (temp !== 0) {
+                const temp2 = temp % 1000;
+                temp = Math.floor(temp / 1000);
+                const string_val = temp2.toString();
+                inter_num = string_val + "," + inter_num; // Append the current group of 3 digits
+            }
+            decimal_value= rounded_str.slice(-3);
+            final_converted_num= inter_num+decimal_value
+            
+            const resultDisplay = document.getElementById("internumber");
+            resultDisplay.innerText = "International Number: " + final_converted_num;
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>List Position</title>
+</head>
+<body>
+    <h1>Change the Position of list elements!</h1>
+    <form class="form">
+    <input type="text" id="array" placeholder="Enter the elements of list seperated by commas" class="inputfield">
+    <button onclick="shuffle()" class="button" type="button">Submit!</button>
+    </form>
+   
+    <h2 id="list_input">The list input:</h2>
+    <h2 id="list_enter">The shuffled list:</h2>
+    
+
+</body>
+<script>
+    function shuffle (){
+        const array_elem= document.getElementById("array")
+        array= array_elem.value.split(',').map(item => item.trim())
+        var inputDis= document.getElementById("list_input")
+        inputDis.innerText= "Input list: " +array
+        var resultDisplay=  document.getElementById("list_enter")
+        for (let i = array.length - 1; i> 0; i--) {  
+            const j = Math.floor(Math.random() * (i + 1));  
+            [array[i], array[j]] = [array[j], array[i]];  
+        }  
+        resultDisplay.innerText="Shuffled list: "+ array  
+    }  
+</script>
+</html>
