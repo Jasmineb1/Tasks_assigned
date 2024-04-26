@@ -41,6 +41,11 @@
     if (op === '*' || op === '/') {
       return 2;
     }
+    
+    if (op === '^') {
+      return 3;
+    }
+    
     return 0;
   }
 
@@ -49,6 +54,7 @@
     if (op === '-') return a - b;
     if (op === '*') return a * b;
     if (op === '/') return Math.floor(a / b);
+    if (op === '^') return Math.floor(a ** b);
   }
 
   function evaluate(tokens) {
