@@ -26,14 +26,14 @@
     var expression = document.getElementById("expression").value;
     var resultDiv = document.getElementById("result");
 
-    // Call the evaluate function from JavaScript code
+    // Call the evaluate function 
     var result = evaluate(expression);
 
     // Display the result
     resultDiv.innerText = "Result: " + result;
   }
 
-  // JavaScript code to evaluate expression (from your provided script)
+  // JavaScript code to evaluate expression 
   function precedence(op) {
     if (op === '+' || op === '-') {
       return 1;
