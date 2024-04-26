@@ -2,6 +2,7 @@ The taks have been completed with the outputs in the UI as in the images:
 1. Anagrams test:
 ![Screenshot 2024-04-26 091540](https://github.com/Jasmineb1/Tasks_assigned/assets/63485374/58fc9e75-faeb-442a-8603-2317d23942cb)
 2. Expression Evaluator:
+   ![Screenshot 2024-04-26 092958](https://github.com/Jasmineb1/Tasks_assigned/assets/63485374/ecc940ca-92ed-46c5-99f6-f3fd73515b00)
 3. Move list item to new position:
  ![Screenshot 2024-04-26 091750](https://github.com/Jasmineb1/Tasks_assigned/assets/63485374/e513101f-64c2-40eb-aa55-ead4018d9add)
 4.Conversion of number into word representation:
